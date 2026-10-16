@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Palette: deep navy, warm ivory, stone grey, muted sage. Values are "R G B" for Tailwind alpha support. */
+:root {
+  --ink: 18 38 58;
+  --steel: 92 91 86;
+  --paper: 246 241 230;
+  --card: 251 248 241;
+  --line: 212 206 192;
+  --stone: 140 138 132;
+  --sage: 138 154 123;
+  --hero: 18 38 58;
+  --on-dark: 246 241 230;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: 241 236 224;
+    --steel: 181 178 168;
+    --paper: 14 26 38;
+    --card: 22 38 54;
+    --line: 42 58 73;
+    --sage: 157 176 140;
+    --hero: 10 19 28;
+    color-scheme: dark;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 64px);
+}
+body {
+  @apply bg-paper font-sans text-[1.0625rem] leading-[1.65] text-ink;
+}
+h1, h2, h3 {
+  @apply font-display leading-[1.08] tracking-[-0.01em];
+}
+:focus-visible {
+  outline: 3px solid rgb(var(--sage));
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[1120px] px-6; }
+  .btn {
+    @apply inline-block cursor-pointer rounded bg-sage px-6 py-3.5 font-display font-bold text-[#12263A] transition duration-200 hover:-translate-y-0.5 hover:brightness-105;
+  }
+  .btn-ghost { @apply border-2 border-current bg-transparent text-inherit; }
+  .tape {
+    @apply h-[46px] animate-ruler bg-sage;
+    background-image:
+      repeating-linear-gradient(90deg, #12263a 0 2px, transparent 2px 12px),
+      repeating-linear-gradient(90deg, #12263a 0 2px, transparent 2px 60px);
+    background-size: 100% 14px, 100% 26px;
+    background-repeat: no-repeat;
+  }
+}
