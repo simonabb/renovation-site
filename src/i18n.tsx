@@ -6,7 +6,7 @@ const messages = {
   "en-GB": {
     metadata: {
       title: "Renovation, Plumbing & Property Maintenance in Scotland | Company Name",
-      description: "Renovation, plumbing and property maintenance across Scotland. Home renovations, kitchens, bathrooms, shop fit-outs and repairs from one reliable team.",
+      description: "Renovation, plumbing, LED lighting and property maintenance across Scotland. Home renovations, kitchens, bathrooms, illuminated mirrors and cabinets, shop fit-outs and repairs from one reliable team.",
       socialTitle: "Renovation, Plumbing & Property Maintenance in Scotland",
       socialDescription: "From small repairs to complete renovations for homes and businesses across Scotland.",
     },
@@ -26,6 +26,13 @@ const messages = {
       area: "Serving homes and businesses across Scotland, including Edinburgh, Glasgow, Aberdeen, Dundee and Inverness.",
       requestQuote: "Request a quote",
       seeServices: "See our services",
+    },
+    lighting: {
+      eyebrow: "Lighting installations",
+      title: "The right light makes all the difference",
+      description: "We install integrated LED lighting that adds a warm glow and a practical finishing touch to bathroom mirrors, kitchen cabinets, display units and more.",
+      features: ["Backlit mirrors", "Kitchen cabinet lighting", "Display niches"],
+      illustration: "Illustration of a bathroom with an LED-lit mirror, cabinet and display niche",
     },
     about: {
       title: "From Small Repairs to Complete Renovations",
@@ -93,7 +100,7 @@ const messages = {
   "ro-RO": {
     metadata: {
       title: "Renovări, instalații sanitare și întreținere proprietăți în Scoția | Company Name",
-      description: "Servicii de renovare, instalații sanitare și întreținere a proprietăților în toată Scoția. Renovări de locuințe, bucătării, băi, amenajări comerciale și reparații, realizate de o echipă de încredere.",
+      description: "Servicii de renovare, instalații sanitare, iluminat LED și întreținere a proprietăților în toată Scoția. Renovări de locuințe, bucătării, băi, oglinzi și dulapuri iluminate, amenajări comerciale și reparații.",
       socialTitle: "Renovări, instalații sanitare și întreținere proprietăți în Scoția",
       socialDescription: "De la reparații minore la renovări complete pentru locuințe și spații comerciale din toată Scoția.",
     },
@@ -113,6 +120,13 @@ const messages = {
       area: "Deservim locuințe și afaceri din toată Scoția, inclusiv din Edinburgh, Glasgow, Aberdeen, Dundee și Inverness.",
       requestQuote: "Solicită o ofertă",
       seeServices: "Vezi serviciile",
+    },
+    lighting: {
+      eyebrow: "Instalații de iluminat",
+      title: "Lumina potrivită schimbă totul",
+      description: "Montăm sisteme LED integrate care adaugă o lumină caldă și un finisaj practic oglinzilor de baie, dulapurilor de bucătărie, vitrinelor și altor spații.",
+      features: ["Oglinzi cu iluminare", "Iluminarea dulapurilor", "Nișe decorative"],
+      illustration: "Ilustrație a unei băi cu oglindă, dulap și nișă decorativă iluminate cu LED",
     },
     about: {
       title: "De la reparații minore la renovări complete",

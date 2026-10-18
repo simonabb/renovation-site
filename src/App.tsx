@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Lighting from "./components/Lighting";
 import About from "./components/About";
 import Services from "./components/Services";
 import Approach from "./components/Approach";
@@ -17,6 +18,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <Lighting />
         <About />
         <Services />
         <Approach />

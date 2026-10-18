@@ -33,6 +33,7 @@ export const localizedContent = {
     nav: [
       { href: "#about", label: "About" },
       { href: "#services", label: "Services" },
+      { href: "#lighting", label: "Lighting" },
       { href: "#approach", label: "Approach" },
       { href: "#gallery", label: "Gallery" },
       { href: "#videos", label: "Videos" },
@@ -46,6 +47,7 @@ export const localizedContent = {
       { title: "Plumbing & Installations", text: "Repairs, new installations and upgrades for pipes, central heating, boilers, sanitary ware and appliances, ready for Scottish winters." },
       { title: "Commercial Renovations & Shop Fit-Outs", text: "Shops, cafés, offices and hospitality spaces across Scotland, made ready for business on schedule." },
       { title: "General Repairs & Property Maintenance", text: "Small fixes and regular upkeep for homeowners, landlords and factors, including common repairs in shared tenement buildings." },
+      { title: "LED Lighting & Feature Installations", text: "Integrated LED lighting for bathroom mirrors, kitchen cabinets, display units and other interior features, installed with a clean, considered finish." },
       { title: "Interior Finishing & Improvements", text: "Painting, flooring, plastering, carpentry and the details that complete a space." },
       { title: "End-to-End Project Management", text: "One point of contact for planning, trades, materials and timelines, so you don't have to chase anyone." },
     ],
@@ -75,13 +77,14 @@ export const localizedContent = {
     ],
     serviceOptions: [
       "Full home renovation", "Kitchen or bathroom remodelling", "Plumbing and installations",
-      "Commercial renovation or shop fit-out", "Repairs and property maintenance", "Interior finishing", "Project management",
+      "Commercial renovation or shop fit-out", "Repairs and property maintenance", "LED lighting installation", "Interior finishing", "Project management",
     ],
   },
   "ro-RO": {
     nav: [
       { href: "#about", label: "Despre noi" },
       { href: "#services", label: "Servicii" },
+      { href: "#lighting", label: "Iluminat" },
       { href: "#approach", label: "Abordare" },
       { href: "#gallery", label: "Galerie" },
       { href: "#videos", label: "Videoclipuri" },
@@ -95,6 +98,7 @@ export const localizedContent = {
       { title: "Instalații sanitare și montaj", text: "Reparații, instalații noi și modernizări ale conductelor, încălzirii centrale, centralelor termice, obiectelor sanitare și electrocasnicelor, pregătite pentru iernile din Scoția." },
       { title: "Renovări comerciale și amenajări de spații", text: "Magazine, cafenele, birouri și spații de ospitalitate din toată Scoția, pregătite pentru deschidere la timp." },
       { title: "Reparații generale și întreținerea proprietăților", text: "Reparații minore și întreținere periodică pentru proprietari, proprietari de imobile închiriate și administratori, inclusiv reparații în clădiri cu spații comune." },
+      { title: "Iluminat LED și montaj decorativ", text: "Iluminat LED integrat pentru oglinzi de baie, dulapuri de bucătărie, vitrine și alte elemente interioare, montat cu atenție la finisaje." },
       { title: "Finisaje și îmbunătățiri interioare", text: "Vopsitorie, pardoseli, tencuieli, tâmplărie și detaliile care dau unei încăperi aspectul final." },
       { title: "Management complet de proiect", text: "Un singur punct de contact pentru planificare, echipe, materiale și termene, fără să fie nevoie să urmărești fiecare meseriaș." },
     ],
@@ -124,7 +128,7 @@ export const localizedContent = {
     ],
     serviceOptions: [
       "Renovare completă de locuință", "Renovarea bucătăriei sau a băii", "Instalații sanitare și montaj",
-      "Renovare comercială sau amenajare de spațiu", "Reparații și întreținerea proprietății", "Finisaje interioare", "Management de proiect",
+      "Renovare comercială sau amenajare de spațiu", "Reparații și întreținerea proprietății", "Instalare iluminat LED", "Finisaje interioare", "Management de proiect",
     ],
   },
 } satisfies Record<Locale, LocalizedContent>;
