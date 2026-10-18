@@ -1,10 +1,16 @@
 import type { Locale } from "../i18n";
 
-export const COMPANY = "Company Name";
-export const EMAIL = "butnarusimona91@gmail.com";
-export const TIKTOK_URL = "https://www.tiktok.com/@companyname"; // replace with the real channel or video URLs
-
-export type SceneType = "kitchen" | "bathroom" | "plumbing" | "commercial" | "repairs";
+export const COMPANY = "Coco Construction";
+export const EMAIL = "donatello_tm@yahoo.com";
+export const TIKTOK_URL = "https://www.tiktok.com/@coco.construction"; // replace with the real channel or video URLs
+export const VIDEO_URLS = [
+  "https://www.tiktok.com/@coco.construction/video/7617190270718905602?_r=1&_t=ZN-9AbvkdqB6Sk",
+  "https://www.tiktok.com/@coco.construction/video/7613012305495772438?_r=1&_t=ZN-9Abvm8po57m",
+  "https://www.tiktok.com/@coco.construction/video/7522223092102368534?_r=1&_t=ZN-9AbvnNvJXyo",
+  "https://www.tiktok.com/@coco.construction/video/7521483200040946966?_r=1&_t=ZN-9AbvpGZanX4",
+  "https://www.tiktok.com/@coco.construction/video/7492486228323863830?_r=1&_t=ZN-9AbvqOiWd9C",
+];
+export type SceneType = "kitchen" | "bathroom" | "plumbing" | "commercial" | "repairs" | any;
 
 export interface Review {
   name: string;
@@ -20,7 +26,7 @@ interface LocalizedContent {
   services: { title: string; text: string }[];
   steps: { title: string; text: string }[];
   gallery: SceneType[];
-  videos: SceneType[];
+  videos: string[];
   reviews: Review[];
   areas: string[];
   faqs: { q: string; a: string }[];
@@ -57,12 +63,11 @@ export const localizedContent = {
       { title: "Deliver", text: "Skilled tradespeople complete the work to a high standard, and we check it with you at the end." },
     ],
     gallery: ["kitchen", "bathroom", "plumbing", "commercial", "repairs", "kitchen", "bathroom", "commercial"],
-    videos: ["kitchen", "plumbing", "commercial", "bathroom", "repairs"],
+    videos: VIDEO_URLS,
     reviews: [
       { name: "Fiona MacLeod", place: "Edinburgh", role: "tenement flat renovation", bg: "#12263A", skin: "#E3B896", text: "They took our Marchmont flat back to the plaster and rebuilt it in ten weeks. They handled the building warrant and our neighbours' questions, and kept the cornices we wanted to save." },
       { name: "Callum Reid", place: "Glasgow", role: "kitchen and bathroom remodelling", bg: "#6F8062", skin: "#C98F6A", text: "Our 1900s flat had awkward pipes and uneven walls. The new kitchen and bathroom fit perfectly, and the team left the close clean every evening." },
       { name: "Isla Henderson", place: "Aberdeen", role: "heating upgrade", bg: "#77746C", skin: "#F0CBA8", text: "They replaced our old boiler and fitted new radiators before winter. A clear quote, no surprises, and they arrived when they said they would." },
-      { name: "Duncan Campbell", place: "Inverness", role: "shop fit-out", bg: "#2B3F52", skin: "#B97F5A", text: "We opened on the date we planned. One contact looked after the joiners, electrics and plumbing, which saved us a lot of stress." },
       { name: "Morag Stewart", place: "Dundee", role: "landlord, property maintenance", bg: "#5C6B50", skin: "#D9A982", text: "I look after several rental flats and need repairs done quickly and properly. They sort problems fast and tell me exactly what was done." },
     ],
     areas: [
@@ -108,7 +113,7 @@ export const localizedContent = {
       { title: "Executăm", text: "Meseriași calificați realizează lucrările la standarde ridicate, iar la final verificăm rezultatul împreună." },
     ],
     gallery: ["kitchen", "bathroom", "plumbing", "commercial", "repairs", "kitchen", "bathroom", "commercial"],
-    videos: ["kitchen", "plumbing", "commercial", "bathroom", "repairs"],
+    videos: VIDEO_URLS,
     reviews: [
       { name: "Fiona MacLeod", place: "Edinburgh", role: "renovarea unui apartament", bg: "#12263A", skin: "#E3B896", text: "Au renovat complet apartamentul nostru din Marchmont în zece săptămâni. S-au ocupat de autorizația de construire, au discutat cu vecinii și au păstrat cornișele pe care doream să le salvăm." },
       { name: "Callum Reid", place: "Glasgow", role: "renovarea bucătăriei și a băii", bg: "#6F8062", skin: "#C98F6A", text: "Apartamentul nostru din anii 1900 avea conducte greu de gestionat și pereți denivelați. Noua bucătărie și baia se potrivesc perfect, iar echipa lăsa casa scării curată în fiecare seară." },

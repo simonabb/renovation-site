@@ -1,47 +1,64 @@
-# Renovation, Remodeling & Property Maintenance: presentation website
+# Coco Construction
 
-React 18 + TypeScript + Tailwind CSS 3, built with Vite.
+A responsive, single-page website for renovation, plumbing, LED lighting, and property maintenance services across Scotland.
 
-TypeScript and production builds target the latest ECMAScript features (`ESNext`). The built site is intended for modern browsers that support current JavaScript syntax and APIs.
+## Technology
 
-## Run it
+- React 18 and TypeScript
+- Vite
+- Tailwind CSS 3
+- British English (`en-GB`) and Romanian (`ro-RO`) interface and content
+
+The English locale is selected by default. Visitors can switch languages from the header; their choice is saved in the browser.
+
+## Run locally
 
 ```bash
 npm install
-npm run dev        # local development
-npm run build      # type-check and build into dist/
-npm run preview    # preview the production build
+npm run dev       # start the development server
+npm run build     # type-check and build into dist/
+npm run preview   # serve the production build locally
 ```
 
-## Languages
+The TypeScript and production builds target modern browsers using `ESNext`.
 
-The site supports British English (`en-GB`) and Romanian (`ro-RO`). British English is the default. Use the flag dropdown in the header to select a language; the selection is saved in the browser and restored on the next visit. Visible page content, navigation, form labels and email, accessibility labels, page title and description update with the selected language.
+## Website features
 
-## Where things are
+- Navigation, hero, services, LED lighting, approach, work gallery, TikTok videos, testimonials, service areas, FAQs, quote form, and footer.
+- Localized navigation, service information, form options, and interface labels.
+- A scrollable gallery carousel and responsive layouts.
+- TikTok's embedded player for each video.
+- A quote form that prepares an email in the visitor's email app.
 
-| What | Where |
+## Content and configuration
+
+| Content | Location |
 | --- | --- |
-| Shared interface translations and language state | `src/i18n.tsx` |
-| Localized services, FAQs, testimonials, areas, and form options | `src/data/content.ts` |
-| Page sections | `src/components/*.tsx` |
-| Scroll animation helper | `src/lib/Reveal.tsx` |
-| Placeholder illustrations | `src/lib/Scene.tsx` |
-| Colour palette (navy, ivory, stone grey, sage), light and dark | `src/index.css` and `tailwind.config.ts` |
-| Default SEO tags and structured data | `index.html` |
+| Company name, contact email, TikTok profile, and video URLs | `src/data/content.ts` |
+| Localized page content | `src/data/content.ts` |
+| Interface translations and language preference | `src/i18n.tsx` |
+| Page sections and interactions | `src/components/` |
+| Gallery scene illustrations | `src/lib/Scene.tsx` |
+| Theme colours and global styles | `src/index.css` and `tailwind.config.ts` |
+| Page metadata and structured data | `index.html` |
 
-## Replace the sample content
+### TikTok videos
 
-- **Gallery photos:** put photos in `public/gallery/` and replace `<Scene ... />` in `src/components/Gallery.tsx` with an `<img>`.
-- **TikTok videos:** set `TIKTOK_URL` in `src/data/content.ts`, or give each video its own URL in `src/components/Videos.tsx`. The cards link out to TikTok.
-- **Testimonials:** the ones in `content.ts` are samples with placeholder names. Replace them with real feedback.
-- **Company name, phone and address:** `COMPANY` in `content.ts`, the footer, and the JSON-LD block in `index.html`.
+Add full TikTok post URLs to `VIDEO_URLS` in `src/data/content.ts`, using URLs with a numeric `/video/{id}` path. The video cards extract each post ID and load TikTok's embedded player. The `TIKTOK_URL` value controls the profile link below the players.
 
-## Quote form
+The embeds are hosted by TikTok, so display and playback depend on TikTok and the availability and embed settings of each post.
 
-The form opens the visitor's email app addressed to `EMAIL` in `content.ts`. There is no server. To receive submissions directly, post the form to a form service or your own API in `src/components/Contact.tsx`.
+### Quote requests
 
-## Before going live
+The form opens the visitor's email app with the request details addressed to `EMAIL` in `src/data/content.ts`. It does not submit to a server. To collect submissions without relying on the visitor's email app, connect the form to a form service or an API in `src/components/Contact.tsx`.
 
-- Add a canonical URL in `index.html` and the sitemap line in `public/robots.txt`.
-- Add the address, phone and opening details to the structured data in `index.html`.
-- Claim a Google Business Profile.
+## GitHub Pages deployment
+
+The GitHub Actions workflow in `.github/workflows/deploy.yml` builds the site and deploys the `dist/` output when changes are pushed to `main`. In the repository's **Settings → Pages**, set the publishing source to **GitHub Actions**.
+
+Vite is configured with the project-site base path `/renovation-site/` in `vite.config.ts`, so built assets load from the GitHub Pages project URL.
+
+## Before publishing
+
+- Set the canonical URL in `index.html` and add the sitemap URL to `public/robots.txt` when the production domain is known.
+- Confirm the business contact and location details in the page content and structured data in `index.html`.

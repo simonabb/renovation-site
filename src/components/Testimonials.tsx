@@ -20,7 +20,7 @@ function Card({ r, locale, portraitLabel }: { r: Review; locale: string; portrai
         <Avatar bg={r.bg} skin={r.skin} locale={locale} label={portraitLabel} />
         <span>
           <b className="block font-display">{r.name}</b>
-          <small className="text-steel">{r.place} · {r.role}</small>
+          <small className="text-steel">{r.place}</small>
         </span>
       </figcaption>
     </figure>
