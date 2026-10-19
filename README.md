@@ -25,6 +25,7 @@ The TypeScript and production builds target modern browsers using `ESNext`.
 ## Website features
 
 - Navigation, hero, services, LED lighting, approach, work gallery, TikTok videos, testimonials, service areas, FAQs, quote form, and footer.
+- Locale-specific English and Romanian hero banners with quote and services calls to action.
 - Localized navigation, service information, form options, and interface labels.
 - A scrollable gallery carousel and responsive layouts.
 - TikTok's embedded player for each video.

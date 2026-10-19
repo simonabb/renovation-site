@@ -1,29 +1,45 @@
+import heroEnglish from "../assets/hero-en.jpg";
+import heroRomanian from "../assets/hero-ro.jpg";
 import { useLocale } from "../i18n";
 
 export default function Hero() {
-  const { messages } = useLocale();
-  const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
+  const { locale, messages } = useLocale();
+  const heroImage = locale === "ro-RO" ? heroRomanian : heroEnglish;
+
   return (
-    <div id="top" className="overflow-hidden bg-navy pt-16 text-ivory md:pt-24">
-      <div className="wrap">
-        <h1 className="max-w-[15ch] animate-up text-[clamp(2.6rem,7.2vw,5.6rem)] font-black [font-stretch:112%]">
-          {messages.hero.title}
-        </h1>
-        <p style={delay(150)} className="mb-3.5 mt-7 max-w-[58ch] animate-up text-xl opacity-90">
-          {messages.hero.description}
-        </p>
-        <p style={delay(300)} className="mb-2.5 animate-up font-display font-semibold text-sage">
-          {messages.hero.services}
-        </p>
-        <p style={delay(400)} className="mb-8 max-w-[58ch] animate-up text-[#C9C4B6]">
-          {messages.hero.area}
-        </p>
-        <div style={delay(500)} className="flex animate-up flex-wrap gap-3.5 pb-20">
-          <a href="#contact" className="btn">{messages.hero.requestQuote}</a>
-          <a href="#services" className="btn btn-ghost">{messages.hero.seeServices}</a>
+    <section id="top" className="overflow-hidden bg-card">
+      <h1 className="sr-only">{messages.hero.title}</h1>
+      <p className="sr-only">{messages.hero.description} {messages.hero.services} {messages.hero.area}</p>
+      <div className="relative mx-auto max-w-[1280px] shadow-[0_28px_48px_-24px_rgba(18,38,58,0.55)]">
+        <img
+          src={heroImage}
+          alt=""
+          aria-hidden="true"
+          className="block h-auto w-full"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgb(var(--hero) / 0.55), transparent 10%, transparent 90%, rgb(var(--hero) / 0.55)), linear-gradient(0deg, rgb(var(--card)), rgb(var(--card) / 0) 24%)",
+          }}
+        />
+        <div className="relative z-10 flex flex-wrap justify-center gap-3.5 px-4 py-5 md:absolute md:bottom-0 md:left-0 md:justify-start md:pl-[4%] md:pb-[3%] md:pt-0">
+          <a
+            href="#contact"
+            className="inline-flex min-h-12 items-center justify-center rounded bg-[#F0C77E] px-5 py-3 font-display font-bold text-[#283A2F] shadow-lg transition hover:-translate-y-0.5 hover:bg-[#F7D99E] focus-visible:outline-offset-4 sm:px-6"
+          >
+            {messages.hero.requestQuote}
+          </a>
+          <a
+            href="#services"
+            className="inline-flex min-h-12 items-center justify-center rounded border-2 border-[#F0C77E] bg-[#283A2F]/80 px-5 py-3 font-display font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#283A2F] focus-visible:outline-offset-4 sm:px-6"
+          >
+            {messages.hero.seeServices}
+          </a>
         </div>
       </div>
-      <div className="tape" aria-hidden="true" />
-    </div>
+    </section>
   );
 }
