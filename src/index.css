@@ -48,7 +48,8 @@ h1, h2, h3 {
 }
 
 @layer components {
-  .wrap { @apply mx-auto w-full max-w-[1120px] px-6; }
+  .wrap { @apply mx-auto w-full max-w-[1280px] px-6; }
+  .wrap-edge { @apply mx-auto w-full max-w-[1280px] px-6; }
   .btn {
     @apply inline-block cursor-pointer rounded bg-sage px-6 py-3.5 font-display font-bold text-[#12263A] transition duration-200 hover:-translate-y-0.5 hover:brightness-105;
   }

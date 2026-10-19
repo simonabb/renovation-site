@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header ref={ref} className="sticky top-[env(safe-area-inset-top,0px)] z-20 bg-navy text-ivory">
-      <div className="wrap relative flex h-16 items-center justify-between gap-1">
+      <div className="wrap-edge relative flex h-16 items-center justify-between gap-1">
         <a href="#top" className="flex items-center gap-2 font-display text-base font-extrabold sm:gap-2.5 sm:text-lg">
           <i aria-hidden="true" className="inline-block h-[22px] w-[22px] bg-sage [clip-path:polygon(0_100%,0_40%,50%_0,100%_40%,100%_100%)]" />
           {COMPANY}
