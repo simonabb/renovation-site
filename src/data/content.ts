@@ -1,4 +1,10 @@
 import type { Locale } from "../i18n";
+import galleryPhoto1 from "../assets/gallery-01.jpg";
+import galleryPhoto2 from "../assets/gallery-02.jpg";
+import galleryPhoto3 from "../assets/gallery-03.jpg";
+import galleryPhoto4 from "../assets/gallery-04.jpg";
+import galleryPhoto5 from "../assets/gallery-05.jpg";
+import galleryPhoto6 from "../assets/gallery-06.jpg";
 
 export const COMPANY = "Coco Construction";
 export const EMAIL = "donatello_tm@yahoo.com";
@@ -10,7 +16,14 @@ export const VIDEO_URLS = [
   "https://www.tiktok.com/@coco.construction/video/7521483200040946966?_r=1&_t=ZN-9AbvpGZanX4",
   "https://www.tiktok.com/@coco.construction/video/7492486228323863830?_r=1&_t=ZN-9AbvqOiWd9C",
 ];
-export type SceneType = "kitchen" | "bathroom" | "plumbing" | "commercial" | "repairs" | any;
+export const GALLERY_IMAGES = [
+  galleryPhoto1,
+  galleryPhoto2,
+  galleryPhoto3,
+  galleryPhoto4,
+  galleryPhoto5,
+  galleryPhoto6,
+];
 
 export interface Review {
   name: string;
@@ -25,7 +38,7 @@ interface LocalizedContent {
   nav: { href: string; label: string }[];
   services: { title: string; text: string }[];
   steps: { title: string; text: string }[];
-  gallery: SceneType[];
+  gallery: string[];
   videos: string[];
   reviews: Review[];
   areas: string[];
@@ -62,7 +75,7 @@ export const localizedContent = {
       { title: "Plan", text: "You receive a clear scope, timeline and cost before any work starts." },
       { title: "Deliver", text: "Skilled tradespeople complete the work to a high standard, and we check it with you at the end." },
     ],
-    gallery: ["kitchen", "bathroom", "plumbing", "commercial", "repairs", "kitchen", "bathroom", "commercial"],
+    gallery: GALLERY_IMAGES,
     videos: VIDEO_URLS,
     reviews: [
       { name: "Fiona MacLeod", place: "Edinburgh", role: "tenement flat renovation", bg: "#12263A", skin: "#E3B896", text: "They took our Marchmont flat back to the plaster and rebuilt it in ten weeks. They handled the building warrant and our neighbours' questions, and kept the cornices we wanted to save." },
@@ -112,7 +125,7 @@ export const localizedContent = {
       { title: "Planificăm", text: "Primești o descriere clară a lucrărilor, un calendar și un cost înainte de începerea lucrului." },
       { title: "Executăm", text: "Meseriași calificați realizează lucrările la standarde ridicate, iar la final verificăm rezultatul împreună." },
     ],
-    gallery: ["kitchen", "bathroom", "plumbing", "commercial", "repairs", "kitchen", "bathroom", "commercial"],
+    gallery: GALLERY_IMAGES,
     videos: VIDEO_URLS,
     reviews: [
       { name: "Fiona MacLeod", place: "Edinburgh", role: "renovarea unui apartament", bg: "#12263A", skin: "#E3B896", text: "Au renovat complet apartamentul nostru din Marchmont în zece săptămâni. S-au ocupat de autorizația de construire, au discutat cu vecinii și au păstrat cornișele pe care doream să le salvăm." },

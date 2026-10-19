@@ -104,14 +104,14 @@ export default function Header() {
           <nav
             id="menu"
             aria-label={messages.header.navLabel}
-            className="absolute right-6 top-[calc(100%+8px)] flex w-[min(270px,calc(100vw-24px))] origin-top-right animate-drop flex-col gap-0.5 rounded-2xl border border-ivory/15 bg-navy p-2 shadow-[0_18px_40px_rgba(10,19,28,.4)]"
+            className="absolute right-4 top-[calc(100%+8px)] flex max-h-[calc(100dvh-88px)] w-[min(220px,calc(100vw-32px))] origin-top-right animate-drop flex-col gap-0.5 overflow-y-auto rounded-2xl border border-ivory/15 bg-navy p-1.5 shadow-[0_18px_40px_rgba(10,19,28,.4)]"
           >
             {nav.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-3.5 py-3 font-display text-[1.05rem] font-semibold transition hover:bg-ivory/10 hover:text-sage focus-visible:bg-ivory/10"
+                className="block min-h-10 rounded-lg px-3 py-2 font-display text-sm font-semibold transition hover:bg-ivory/10 hover:text-sage focus-visible:bg-ivory/10"
               >
                 {l.label}
               </a>

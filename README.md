@@ -39,7 +39,7 @@ The TypeScript and production builds target modern browsers using `ESNext`.
 | Localized page content | `src/data/content.ts` |
 | Interface translations and language preference | `src/i18n.tsx` |
 | Page sections and interactions | `src/components/` |
-| Gallery scene illustrations | `src/lib/Scene.tsx` |
+| Gallery project photos | `src/assets/gallery-*.jpg` |
 | Theme colours and global styles | `src/index.css` and `tailwind.config.ts` |
 | Page metadata and structured data | `index.html` |
 

@@ -1,13 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Reveal from "../lib/Reveal";
-import Scene from "../lib/Scene";
 import { localizedContent } from "../data/content";
 import { formatMessage, useLocale } from "../i18n";
 
-/*
- * Image carousel (CSS scroll-snap). To use real photos, put them in /public/gallery
- * and replace <Scene ... /> below with <img src="/gallery/photo-1.jpg" alt="..." className="h-full w-full object-cover" />.
- */
 export default function Gallery() {
   const { locale, messages } = useLocale();
   const gallery = localizedContent[locale].gallery;
@@ -68,15 +63,20 @@ export default function Gallery() {
             }}
             className="relative flex snap-x snap-mandatory gap-[18px] overflow-x-auto scroll-smooth p-0.5 [scrollbar-width:none] motion-reduce:scroll-auto [&::-webkit-scrollbar]:hidden"
           >
-            {gallery.map((type, i) => (
+            {gallery.map((src, i) => (
               <div
-                key={i}
+                key={src}
                 role="group"
                 aria-roledescription="slide"
                 aria-label={formatMessage(messages.gallery.photo, { current: i + 1, total: gallery.length })}
                 className="aspect-[4/3] w-[min(560px,82vw)] flex-none snap-center overflow-hidden rounded-lg border border-line"
               >
-                <Scene type={type} index={i} />
+                <img
+                  src={src}
+                  alt={formatMessage(messages.gallery.photo, { current: i + 1, total: gallery.length })}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
               </div>
             ))}
           </div>
