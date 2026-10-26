@@ -96,7 +96,6 @@ const messages = {
     },
     footer: {
       description: "Renovation, Remodelling & Property Maintenance.",
-      contactPlaceholder: "Phone · Address (to be added)",
     },
   },
   "ro-RO": {
@@ -192,7 +191,6 @@ const messages = {
     },
     footer: {
       description: "Renovări, reamenajări și întreținerea proprietăților.",
-      contactPlaceholder: "Telefon · Adresă (va fi adăugată)",
     },
   },
 } as const;
