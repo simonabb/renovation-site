@@ -1,5 +1,5 @@
-import heroEnglish from "../assets/hero-en.jpg";
-import heroRomanian from "../assets/hero-ro.jpg";
+import heroEnglish from "../assets/hero-en.webp";
+import heroRomanian from "../assets/hero-ro.webp";
 import { useLocale } from "../i18n";
 
 export default function Hero() {

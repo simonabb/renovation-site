@@ -5,7 +5,7 @@ export type Locale = "en-GB" | "ro-RO";
 const messages = {
   "en-GB": {
     metadata: {
-      title: "Renovation, Plumbing & Property Maintenance in Scotland | Company Name",
+      title: "Renovation, Plumbing & Property Maintenance in Scotland | Coco Construction",
       description: "Renovation, plumbing, LED lighting and property maintenance across Scotland. Home renovations, kitchens, bathrooms, illuminated mirrors and cabinets, shop fit-outs and repairs from one reliable team.",
       socialTitle: "Renovation, Plumbing & Property Maintenance in Scotland",
       socialDescription: "From small repairs to complete renovations for homes and businesses across Scotland.",
@@ -99,7 +99,7 @@ const messages = {
   },
   "ro-RO": {
     metadata: {
-      title: "Renovări, instalații sanitare și întreținere proprietăți în Scoția | Company Name",
+      title: "Renovări, instalații sanitare și întreținere proprietăți în Scoția | Coco Construction",
       description: "Servicii de renovare, instalații sanitare, iluminat LED și întreținere a proprietăților în toată Scoția. Renovări de locuințe, bucătării, băi, oglinzi și dulapuri iluminate, amenajări comerciale și reparații.",
       socialTitle: "Renovări, instalații sanitare și întreținere proprietăți în Scoția",
       socialDescription: "De la reparații minore la renovări complete pentru locuințe și spații comerciale din toată Scoția.",
