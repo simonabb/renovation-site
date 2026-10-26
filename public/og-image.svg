@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#12263A"/>
+      <stop offset="100%" stop-color="#1E2F39"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="70" width="1040" height="490" rx="32" fill="#1A2E38" opacity=".75"/>
+  <path d="M160 420L400 260L520 330L860 190L1040 250V500H160Z" fill="#E8D5A8" opacity=".12"/>
+  <text x="100" y="245" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700" fill="#F5F1E7">Coco Construction</text>
+  <text x="100" y="330" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="600" fill="#D9B96E">Renovation • Plumbing • Property Maintenance</text>
+  <text x="100" y="420" font-family="Arial, Helvetica, sans-serif" font-size="38" fill="#EDE4D6">Scotland based home and commercial renovation specialists</text>
+</svg>

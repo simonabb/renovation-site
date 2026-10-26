@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-# Add your sitemap once the domain is live:
-# Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://simonabb.github.io/renovation-site/sitemap.xml

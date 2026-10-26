@@ -1,0 +1,10 @@
+{
+  "name": "Coco Construction",
+  "short_name": "Coco Construction",
+  "description": "Renovation, plumbing and property maintenance services across Scotland.",
+  "start_url": "/renovation-site/",
+  "display": "standalone",
+  "background_color": "#12263A",
+  "theme_color": "#12263A",
+  "icons": []
+}
