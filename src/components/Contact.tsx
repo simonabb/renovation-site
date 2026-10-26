@@ -1,34 +1,48 @@
 import { useState, type FormEvent } from "react";
 import Reveal from "../lib/Reveal";
-import { EMAIL, localizedContent } from "../data/content";
+import { EMAIL, WHATSAPP_NUMBER, localizedContent } from "../data/content";
 import { formatMessage, useLocale } from "../i18n";
 
 const field =
   "w-full rounded-md border-[1.5px] border-stone bg-paper px-3.5 py-3 font-[inherit] text-ink";
 
-/*
- * There is no server in this project, so the form opens the visitor's email app with the details
- * filled in (mailto). To receive submissions directly, post the form to a service such as
- * Formspree or to your own API instead.
- */
 export default function Contact() {
-  const [sent, setSent] = useState(false);
+  const [sentVia, setSentVia] = useState<"email" | "whatsapp" | null>(null);
   const { locale, messages } = useLocale();
   const serviceOptions = localizedContent[locale].serviceOptions;
 
+  const getMessage = (form: HTMLFormElement) => {
+    const formData = new FormData(form);
+    const value = (key: string) => String(formData.get(key) ?? "").trim();
+    return [
+      `${messages.contact.emailBodyName}: ${value("name")}`,
+      `${messages.contact.emailBodyPhone}: ${value("phone")}`,
+      `${messages.contact.emailBodyPlace}: ${value("place")}`,
+      `${messages.contact.emailBodyService}: ${value("service")}`,
+      "",
+      value("msg"),
+    ].join("\n");
+  };
+
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const f = new FormData(e.currentTarget);
-    const v = (k: string) => String(f.get(k) ?? "").trim();
-    const body = `${messages.contact.emailBodyName}: ${v("name")}\n${messages.contact.emailBodyPhone}: ${v("phone")}\n${messages.contact.emailBodyPlace}: ${v("place")}\n${messages.contact.emailBodyService}: ${v("service")}\n\n${v("msg")}`;
-    const subject = formatMessage(messages.contact.emailSubject, { service: v("service") });
-    const href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const formData = new FormData(e.currentTarget);
+    const service = String(formData.get("service") ?? "").trim();
+    const subject = formatMessage(messages.contact.emailSubject, { service });
+    const href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(getMessage(e.currentTarget))}`;
     const a = document.createElement("a");
     a.href = href;
     document.body.appendChild(a);
     a.click();
     a.remove();
-    setSent(true);
+    setSentVia("email");
+  };
+
+  const onWhatsAppClick = (form: HTMLFormElement | null) => {
+    if (!form || !form.reportValidity()) return;
+    const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getMessage(form))}`;
+    window.open(href, "_blank", "noopener,noreferrer");
+    setSentVia("whatsapp");
   };
 
   return (
@@ -53,9 +67,19 @@ export default function Contact() {
               {messages.contact.details}
               <textarea name="msg" required className={`${field} min-h-[120px] resize-y`} />
             </label>
-            <button type="submit" className="btn justify-self-start border-0">{messages.contact.submit}</button>
+            <div className="flex flex-wrap gap-3 md:col-span-2">
+              <button type="submit" className="btn justify-self-start border-0">{messages.contact.submit}</button>
+              <button
+                type="button"
+                onClick={(event) => onWhatsAppClick(event.currentTarget.form)}
+                className="inline-flex min-h-12 items-center justify-center rounded bg-[#25D366] px-5 py-3 font-display font-bold text-[#123A28] transition hover:-translate-y-0.5 hover:brightness-105"
+              >
+                {messages.contact.whatsappSubmit}
+              </button>
+            </div>
             <p role="status" className="text-steel md:col-span-2">
-              {sent && formatMessage(messages.contact.emailStatus, { email: EMAIL })}
+              {sentVia === "email" && formatMessage(messages.contact.emailStatus, { email: EMAIL })}
+              {sentVia === "whatsapp" && messages.contact.whatsappStatus}
             </p>
           </form>
         </Reveal>

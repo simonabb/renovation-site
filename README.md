@@ -29,7 +29,7 @@ The TypeScript and production builds target modern browsers using `ESNext`.
 - Localized navigation, service information, form options, and interface labels.
 - A scrollable gallery carousel and responsive layouts.
 - TikTok's embedded player for each video.
-- A quote form that prepares an email in the visitor's email app.
+- A quote form that prepares the request in the visitor's email app or WhatsApp.
 
 ## Content and configuration
 
@@ -51,7 +51,7 @@ The embeds are hosted by TikTok, so display and playback depend on TikTok and th
 
 ### Quote requests
 
-The form opens the visitor's email app with the request details addressed to `EMAIL` in `src/data/content.ts`. It does not submit to a server. To collect submissions without relying on the visitor's email app, connect the form to a form service or an API in `src/components/Contact.tsx`.
+The quote form can prepare a request in the visitor's email app using `EMAIL`, or open WhatsApp with a prefilled message using `WHATSAPP_NUMBER` in `src/data/content.ts`. The visitor reviews and sends the message in their selected app; the site does not submit form data to a server.
 
 ## GitHub Pages deployment
 

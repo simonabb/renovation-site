@@ -8,6 +8,7 @@ import galleryPhoto6 from "../assets/gallery-06.jpg";
 
 export const COMPANY = "Coco Construction";
 export const EMAIL = "donatello_tm@yahoo.com";
+export const WHATSAPP_NUMBER = "447388161585";
 export const TIKTOK_URL = "https://www.tiktok.com/@coco.construction"; // replace with the real channel or video URLs
 export const VIDEO_URLS = [
   "https://www.tiktok.com/@coco.construction/video/7617190270718905602?_r=1&_t=ZN-9AbvkdqB6Sk",
