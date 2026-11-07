@@ -23,7 +23,6 @@ const messages = {
       title: "We Build. We Renovate. We Take Care of It.",
       description: "From everyday repairs to complete residential and commercial renovations, we deliver reliable solutions with quality workmanship from start to finish.",
       services: "Renovation · Plumbing · Property Maintenance",
-      area: "Serving homes and businesses across Scotland, including Edinburgh, Glasgow, Aberdeen, Dundee and Inverness.",
       requestQuote: "Request a quote",
       seeServices: "See our services",
     },
@@ -68,10 +67,6 @@ const messages = {
       title: "What customers across Scotland say",
       portrait: "Portrait of {name}, customer in {place}",
       disclaimer: "Sample testimonials with placeholder names and photos. Replace them with real customer feedback when available.",
-    },
-    areas: {
-      title: "Renovation and maintenance across Scotland",
-      summary: "We work with homeowners, landlords, factors and businesses in towns and cities across the country.",
     },
     faq: {
       title: "Frequently asked questions",
@@ -118,7 +113,6 @@ const messages = {
       title: "Construim. Renovăm. Avem grijă de proprietatea ta.",
       description: "De la reparații de zi cu zi până la renovări complete pentru locuințe și spații comerciale, oferim soluții de încredere și lucrări de calitate, de la început până la final.",
       services: "Renovări · Instalații sanitare · Întreținerea proprietăților",
-      area: "Deservim locuințe și afaceri din toată Scoția, inclusiv din Edinburgh, Glasgow, Aberdeen, Dundee și Inverness.",
       requestQuote: "Solicită o ofertă",
       seeServices: "Vezi serviciile",
     },
@@ -163,10 +157,6 @@ const messages = {
       title: "Părerile clienților din toată Scoția",
       portrait: "Portretul lui {name}, client din {place}",
       disclaimer: "Acestea sunt testimoniale demonstrative, cu nume și fotografii provizorii. Înlocuiește-le cu opinii reale ale clienților când sunt disponibile.",
-    },
-    areas: {
-      title: "Renovări și întreținere în toată Scoția",
-      summary: "Colaborăm cu proprietari de locuințe, proprietari de imobile închiriate, administratori de clădiri și companii din orașe și localități din întreaga țară.",
     },
     faq: {
       title: "Întrebări frecvente",

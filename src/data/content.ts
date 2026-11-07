@@ -42,7 +42,6 @@ interface LocalizedContent {
   gallery: string[];
   videos: string[];
   reviews: Review[];
-  areas: string[];
   faqs: { q: string; a: string }[];
   serviceOptions: string[];
 }
@@ -83,10 +82,6 @@ export const localizedContent = {
       { name: "Callum Reid", place: "Glasgow", role: "kitchen and bathroom remodelling", bg: "#6F8062", skin: "#C98F6A", text: "Our 1900s flat had awkward pipes and uneven walls. The new kitchen and bathroom fit perfectly, and the team left the close clean every evening." },
       { name: "Isla Henderson", place: "Aberdeen", role: "heating upgrade", bg: "#77746C", skin: "#F0CBA8", text: "They replaced our old boiler and fitted new radiators before winter. A clear quote, no surprises, and they arrived when they said they would." },
       { name: "Morag Stewart", place: "Dundee", role: "landlord, property maintenance", bg: "#5C6B50", skin: "#D9A982", text: "I look after several rental flats and need repairs done quickly and properly. They sort problems fast and tell me exactly what was done." },
-    ],
-    areas: [
-      "Edinburgh & the Lothians", "Glasgow & Lanarkshire", "Aberdeen & Aberdeenshire", "Dundee & Angus",
-      "Inverness & the Highlands", "Fife", "Stirling & Perthshire", "Scottish Borders",
     ],
     faqs: [
       { q: "Do I need a building warrant for my renovation?", a: "Many structural changes, extensions and some alterations need a building warrant from your local council. Like-for-like repairs and decoration usually do not. We tell you what applies to your project and help with the application." },
@@ -134,10 +129,6 @@ export const localizedContent = {
       { name: "Isla Henderson", place: "Aberdeen", role: "modernizarea încălzirii", bg: "#77746C", skin: "#F0CBA8", text: "Au înlocuit centrala veche și au montat radiatoare noi înainte de iarnă. Ofertă clară, fără costuri neașteptate și au ajuns la timp." },
       { name: "Duncan Campbell", place: "Inverness", role: "amenajarea unui spațiu comercial", bg: "#2B3F52", skin: "#B97F5A", text: "Am deschis la data planificată. O singură persoană de contact s-a ocupat de tâmplari, instalația electrică și cea sanitară, ceea ce ne-a scutit de mult stres." },
       { name: "Morag Stewart", place: "Dundee", role: "întreținerea proprietăților închiriate", bg: "#5C6B50", skin: "#D9A982", text: "Administrez mai multe apartamente închiriate și am nevoie de reparații rapide și bine făcute. Rezolvă problemele prompt și îmi spun exact ce au făcut." },
-    ],
-    areas: [
-      "Edinburgh și regiunea Lothian", "Glasgow și Lanarkshire", "Aberdeen și Aberdeenshire", "Dundee și Angus",
-      "Inverness și Highlands", "Fife", "Stirling și Perthshire", "Scottish Borders",
     ],
     faqs: [
       { q: "Am nevoie de autorizație de construire pentru renovare?", a: "Multe modificări structurale, extinderi și unele lucrări necesită autorizație de construire de la consiliul local. Reparațiile similare cu cele existente și decorarea nu necesită, de regulă, autorizație. Îți explicăm ce se aplică proiectului tău și te ajutăm cu cererea." },
