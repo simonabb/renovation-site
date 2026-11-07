@@ -1,10 +1,14 @@
 import type { Locale } from "../i18n";
-import galleryPhoto1 from "../assets/gallery-01.jpg";
-import galleryPhoto2 from "../assets/gallery-02.jpg";
-import galleryPhoto3 from "../assets/gallery-03.jpg";
-import galleryPhoto4 from "../assets/gallery-04.jpg";
-import galleryPhoto5 from "../assets/gallery-05.jpg";
-import galleryPhoto6 from "../assets/gallery-06.jpg";
+
+const projectImageModules = import.meta.glob("../assets/gallery/*.jpg", { eager: true }) as Record<
+  string,
+  { default: string }
+>;
+
+const getProjectNumber = (filePath: string) => {
+  const match = filePath.match(/project-(\d+)\.jpg$/);
+  return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+};
 
 export const COMPANY = "Coco Construction";
 export const EMAIL = "donatello_tm@yahoo.com";
@@ -17,14 +21,9 @@ export const VIDEO_URLS = [
   "https://www.tiktok.com/@coco.construction/video/7521483200040946966?_r=1&_t=ZN-9AbvpGZanX4",
   "https://www.tiktok.com/@coco.construction/video/7492486228323863830?_r=1&_t=ZN-9AbvqOiWd9C",
 ];
-export const GALLERY_IMAGES = [
-  galleryPhoto1,
-  galleryPhoto2,
-  galleryPhoto3,
-  galleryPhoto4,
-  galleryPhoto5,
-  galleryPhoto6,
-];
+export const GALLERY_IMAGES = Object.entries(projectImageModules)
+  .sort(([left], [right]) => getProjectNumber(left) - getProjectNumber(right))
+  .map(([, module]) => module.default);
 
 export interface Review {
   name: string;
