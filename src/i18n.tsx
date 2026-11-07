@@ -36,9 +36,8 @@ const messages = {
     about: {
       title: "From Small Repairs to Complete Renovations",
       lead: "Quality workmanship. Reliable service. Complete solutions.",
-      paragraphOne: "We provide comprehensive renovation, plumbing, and property maintenance services for residential and commercial properties. From small repairs and essential maintenance to full home renovations and commercial space transformations, we bring the skills, experience, and attention to detail needed to get the job done right.",
-      paragraphTwo: "Our approach is simple: understand your needs, plan the work carefully, and deliver practical, high-quality results from start to finish. Whether you're updating your home, preparing a commercial space for business, or looking for a reliable partner to handle repairs and maintenance, we're here to help turn your plans into reality.",
-      promise: "One reliable partner. A complete range of services. Work you can trust.",
+      paragraph: "Renovation, plumbing and property maintenance for homes and businesses across Scotland. We plan carefully and deliver practical, high-quality results from start to finish.",
+      promise: "One reliable partner. Work you can trust.",
       tagline: "Your trusted partner for renovations, repairs, and property improvements.",
       summary: "We deliver complete solutions tailored to your needs, combining skilled workmanship, practical expertise, and dependable service.",
     },
@@ -126,9 +125,8 @@ const messages = {
     about: {
       title: "De la reparații minore la renovări complete",
       lead: "Lucrări de calitate. Servicii de încredere. Soluții complete.",
-      paragraphOne: "Oferim servicii complete de renovare, instalații sanitare și întreținere pentru proprietăți rezidențiale și comerciale. De la reparații minore și lucrări esențiale de întreținere până la renovări complete de locuințe și transformarea spațiilor comerciale, punem la dispoziție competențele, experiența și atenția la detalii necesare pentru o lucrare bine făcută.",
-      paragraphTwo: "Abordarea noastră este simplă: înțelegem nevoile tale, planificăm cu atenție lucrările și oferim rezultate practice și de calitate, de la început până la final. Fie că îți modernizezi locuința, pregătești un spațiu comercial pentru afacere sau cauți un partener de încredere pentru reparații și întreținere, te ajutăm să-ți transformi planurile în realitate.",
-      promise: "Un partener de încredere. O gamă completă de servicii. Lucrări pe care te poți baza.",
+      paragraph: "Renovări, instalații sanitare și întreținerea proprietăților pentru locuințe și firme din toată Scoția. Planificăm atent și livrăm rezultate practice, de înaltă calitate, de la început până la sfârșit.",
+      promise: "Un partener de încredere. Lucrări pe care te poți baza.",
       tagline: "Partenerul tău de încredere pentru renovări, reparații și îmbunătățirea proprietăților.",
       summary: "Oferim soluții complete, adaptate nevoilor tale, îmbinând măiestria, experiența practică și servicii de încredere.",
     },
