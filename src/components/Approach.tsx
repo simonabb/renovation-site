@@ -2,6 +2,7 @@ import Reveal from "../lib/Reveal";
 import { localizedContent } from "../data/content";
 import { useLocale } from "../i18n";
 
+/** Shows the localized three-step process used to deliver each project. */
 export default function Approach() {
   const { locale, messages } = useLocale();
   const steps = localizedContent[locale].steps;

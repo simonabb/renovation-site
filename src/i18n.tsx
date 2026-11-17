@@ -1,7 +1,9 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
+/** Locale identifiers supported by the interface. */
 export type Locale = "en-GB" | "ro-RO";
 
+// Keep interface labels and page metadata in the same locale shape.
 const messages = {
   "en-GB": {
     metadata: {
@@ -190,8 +192,10 @@ type LocaleContextValue = {
 };
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
+/** Storage key used to remember the visitor's locale between page loads. */
 const STORAGE_KEY = "renovation-site-locale";
 
+/** Provides locale state, translated messages, and document metadata updates. */
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(() => {
     const savedLocale = localStorage.getItem(STORAGE_KEY);
@@ -221,12 +225,14 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
 }
 
+/** Reads the active locale and messages; must be called under LocaleProvider. */
 export function useLocale() {
   const context = useContext(LocaleContext);
   if (!context) throw new Error("useLocale must be used within LocaleProvider");
   return context;
 }
 
+/** Replaces `{key}` placeholders in a translated string with supplied values. */
 export function formatMessage(template: string, values: Record<string, string | number>) {
   return template.replace(/\{(\w+)\}/g, (match, key: string) => String(values[key] ?? match));
 }

@@ -3,15 +3,19 @@ import Reveal from "../lib/Reveal";
 import { localizedContent } from "../data/content";
 import { formatMessage, useLocale } from "../i18n";
 
+/** Displays project photos in a keyboard-accessible, scrollable carousel. */
 export default function Gallery() {
   const { locale, messages } = useLocale();
   const gallery = localizedContent[locale].gallery;
   const track = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
 
+  /** Returns the current slide elements from the scrolling track. */
   const slides = () => Array.from(track.current?.children ?? []) as HTMLElement[];
+  /** Calculates a slide's horizontal centre in the track's coordinate space. */
   const mid = (el: HTMLElement) => el.offsetLeft + el.clientWidth / 2;
 
+  /** Finds the slide nearest the centre of the visible carousel area. */
   const nearest = useCallback(() => {
     const t = track.current;
     if (!t) return 0;
@@ -24,6 +28,7 @@ export default function Gallery() {
     return best;
   }, []);
 
+  /** Smoothly centres a slide, wrapping around at either end of the list. */
   const go = (i: number) => {
     const t = track.current;
     const all = slides();

@@ -3,14 +3,17 @@ import Reveal from "../lib/Reveal";
 import { EMAIL, WHATSAPP_NUMBER, localizedContent } from "../data/content";
 import { formatMessage, useLocale } from "../i18n";
 
+/** Shared styling for the contact form's text-entry controls. */
 const field =
   "w-full rounded-md border-[1.5px] border-stone bg-paper px-3.5 py-3 font-[inherit] text-ink";
 
+/** Builds quote requests for the visitor to send through email or WhatsApp. */
 export default function Contact() {
   const [sentVia, setSentVia] = useState<"email" | "whatsapp" | null>(null);
   const { locale, messages } = useLocale();
   const serviceOptions = localizedContent[locale].serviceOptions;
 
+  /** Formats the entered form values as a plain-text message. */
   const getMessage = (form: HTMLFormElement) => {
     const formData = new FormData(form);
     const value = (key: string) => String(formData.get(key) ?? "").trim();
@@ -24,6 +27,7 @@ export default function Contact() {
     ].join("\n");
   };
 
+  /** Opens the visitor's default email app with the request prefilled. */
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -38,6 +42,7 @@ export default function Contact() {
     setSentVia("email");
   };
 
+  /** Opens WhatsApp with a prefilled request after native form validation. */
   const onWhatsAppClick = (form: HTMLFormElement | null) => {
     if (!form || !form.reportValidity()) return;
     const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getMessage(form))}`;

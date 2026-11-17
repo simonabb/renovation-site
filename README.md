@@ -36,12 +36,29 @@ The TypeScript and production builds target modern browsers using `ESNext`.
 | Content | Location |
 | --- | --- |
 | Company name, contact email, TikTok profile, and video URLs | `src/data/content.ts` |
-| Localized page content | `src/data/content.ts` |
-| Interface translations and language preference | `src/i18n.tsx` |
+| Localized navigation, services, FAQs, gallery list, reviews, and form options | `src/data/content.ts` |
+| Interface translations, locale state, and document metadata updates | `src/i18n.tsx` |
 | Page sections and interactions | `src/components/` |
-| Gallery project photos | `src/assets/gallery-*.jpg` |
+| Gallery project photos | `src/assets/gallery/` |
 | Theme colours and global styles | `src/index.css` and `tailwind.config.ts` |
 | Page metadata and structured data | `index.html` |
+
+### Code organization
+
+- `src/main.tsx` mounts the React application and provides the locale context.
+- `src/App.tsx` defines the order of the single-page sections.
+- `src/components/` contains the page sections; components that display localized content read it with `useLocale()`.
+- `src/lib/Reveal.tsx` contains a reusable scroll-triggered reveal wrapper.
+- `src/data/content.ts` stores editable site content and imports gallery photos at build time.
+- `src/i18n.tsx` stores translated interface labels and applies the selected language to the document metadata.
+
+### Gallery photos
+
+Put `.jpg` photos in `src/assets/gallery/` and name them `project-N.jpg`, replacing `N` with a number (for example, `project-18.jpg`). Vite discovers these files during the build, and the gallery sorts them by that number. No manual import or list update is needed.
+
+### Adding a language
+
+Add the locale identifier to the `Locale` type in `src/i18n.tsx`, then provide matching message and localized-content objects in that file and `src/data/content.ts`. Add the locale to the language selector in `src/components/Header.tsx`. Keep the translation object shapes consistent so every section and form has the labels it needs.
 
 ### TikTok videos
 

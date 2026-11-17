@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Shared theme tokens are RGB triplets so Tailwind utilities can apply alpha values. */
 /* Palette: deep navy, warm ivory, stone grey, muted sage. Values are "R G B" for Tailwind alpha support. */
 :root {
   --ink: 18 38 58;
@@ -47,6 +48,7 @@ h1, h2, h3 {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
+/* Reusable layout and button primitives used by page sections. */
 @layer components {
   .wrap { @apply mx-auto w-full max-w-[1280px] px-6; }
   .wrap-edge { @apply mx-auto w-full max-w-[1280px] px-6; }

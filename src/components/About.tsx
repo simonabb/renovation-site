@@ -1,6 +1,7 @@
 import Reveal from "../lib/Reveal";
 import { useLocale } from "../i18n";
 
+/** Presents the company's renovation approach and service promise. */
 export default function About() {
   const { messages } = useLocale();
   return (

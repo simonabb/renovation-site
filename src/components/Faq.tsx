@@ -2,6 +2,7 @@ import Reveal from "../lib/Reveal";
 import { localizedContent } from "../data/content";
 import { useLocale } from "../i18n";
 
+/** Renders the localized FAQs as accessible, native disclosure elements. */
 export default function Faq() {
   const { locale, messages } = useLocale();
   const faqs = localizedContent[locale].faqs;

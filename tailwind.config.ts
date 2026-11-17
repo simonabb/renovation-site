@@ -3,6 +3,7 @@ import type { Config } from "tailwindcss";
 // Colours are CSS variables (see src/index.css) so the light and dark themes share one palette.
 const v = (name: string) => `rgb(var(--${name}) / <alpha-value>)`;
 
+/** Tailwind theme extensions and animation utilities used throughout the site. */
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {

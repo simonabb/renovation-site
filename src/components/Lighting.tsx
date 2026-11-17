@@ -1,6 +1,7 @@
 import Reveal from "../lib/Reveal";
 import { useLocale } from "../i18n";
 
+/** Describes the LED lighting service alongside its illustrative bathroom graphic. */
 export default function Lighting() {
   const { messages } = useLocale();
 

@@ -2,6 +2,7 @@ import Reveal from "../lib/Reveal";
 import { localizedContent } from "../data/content";
 import { useLocale } from "../i18n";
 
+/** Lists the services using localized content and reveal-on-scroll effects. */
 export default function Services() {
   const { locale, messages } = useLocale();
   const services = localizedContent[locale].services;

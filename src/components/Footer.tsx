@@ -1,6 +1,7 @@
 import { COMPANY } from "../data/content";
 import { useLocale } from "../i18n";
 
+/** Displays the company name, current year, and localized footer text. */
 export default function Footer() {
   const { messages } = useLocale();
   return (

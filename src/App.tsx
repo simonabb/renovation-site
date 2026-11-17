@@ -11,6 +11,7 @@ import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+/** Composes the single-page site sections in their displayed order. */
 export default function App() {
   return (
     <>

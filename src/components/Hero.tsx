@@ -2,6 +2,7 @@ import heroEnglish from "../assets/hero-en.webp";
 import heroRomanian from "../assets/hero-ro.webp";
 import { useLocale } from "../i18n";
 
+/** Displays the locale-specific banner and the primary page actions. */
 export default function Hero() {
   const { locale, messages } = useLocale();
   const heroImage = locale === "ro-RO" ? heroRomanian : heroEnglish;

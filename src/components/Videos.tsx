@@ -2,6 +2,7 @@ import Reveal from "../lib/Reveal";
 import { localizedContent, TIKTOK_URL } from "../data/content";
 import { formatMessage, useLocale } from "../i18n";
 
+/** Extracts the numeric post identifier required by TikTok's player URL. */
 function getTikTokVideoId(url: string) {
   const videoId = new URL(url).pathname.match(/\/video\/(\d+)\/?$/)?.[1];
   if (!videoId) {
@@ -10,6 +11,7 @@ function getTikTokVideoId(url: string) {
   return videoId;
 }
 
+/** Embeds the configured TikTok videos and links to the company profile. */
 export default function Videos() {
   const { locale, messages } = useLocale();
   const videos = localizedContent[locale].videos;

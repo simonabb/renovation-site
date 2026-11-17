@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { COMPANY, localizedContent } from "../data/content";
 import { useLocale } from "../i18n";
 
+/** Provides the sticky site header, navigation menu, and locale switcher. */
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
@@ -123,6 +124,7 @@ export default function Header() {
   );
 }
 
+/** Draws the flag icon associated with a supported locale. */
 function Flag({ locale }: { locale: "en-GB" | "ro-RO" }) {
   const className = `flex-none rounded-[2px] ${locale === "ro-RO" ? "h-4 w-6" : "h-3 w-6"}`;
 

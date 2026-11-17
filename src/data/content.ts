@@ -1,10 +1,12 @@
 import type { Locale } from "../i18n";
 
+// Eager imports let Vite include every local gallery photo in the production bundle.
 const projectImageModules = import.meta.glob("../assets/gallery/*.jpg", { eager: true }) as Record<
   string,
   { default: string }
 >;
 
+/** Reads the numeric order from a project-N.jpg filename. */
 const getProjectNumber = (filePath: string) => {
   const match = filePath.match(/project-(\d+)\.jpg$/);
   return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
@@ -13,7 +15,9 @@ const getProjectNumber = (filePath: string) => {
 export const COMPANY = "Coco Construction";
 export const EMAIL = "donatello_tm@yahoo.com";
 export const WHATSAPP_NUMBER = "447388161585";
-export const TIKTOK_URL = "https://www.tiktok.com/@coco.construction"; // replace with the real channel or video URLs
+/** TikTok profile URL used by the video section's follow link. */
+export const TIKTOK_URL = "https://www.tiktok.com/@coco.construction";
+/** Full TikTok post URLs to embed in the videos section. */
 export const VIDEO_URLS = [
   "https://www.tiktok.com/@coco.construction/video/7617190270718905602?_r=1&_t=ZN-9AbvkdqB6Sk",
   "https://www.tiktok.com/@coco.construction/video/7613012305495772438?_r=1&_t=ZN-9Abvm8po57m",
@@ -21,6 +25,7 @@ export const VIDEO_URLS = [
   "https://www.tiktok.com/@coco.construction/video/7521483200040946966?_r=1&_t=ZN-9AbvpGZanX4",
   "https://www.tiktok.com/@coco.construction/video/7492486228323863830?_r=1&_t=ZN-9AbvqOiWd9C",
 ];
+/** Gallery image URLs sorted numerically by their project-N.jpg filenames. */
 export const GALLERY_IMAGES = Object.entries(projectImageModules)
   .sort(([left], [right]) => getProjectNumber(left) - getProjectNumber(right))
   .map(([, module]) => module.default);
@@ -34,6 +39,7 @@ export interface Review {
   skin: string;
 }
 
+/** Content shape shared by both locale-specific data sets. */
 interface LocalizedContent {
   nav: { href: string; label: string }[];
   services: { title: string; text: string }[];
@@ -45,7 +51,7 @@ interface LocalizedContent {
   serviceOptions: string[];
 }
 
-// Replace the sample testimonials and illustrations with real project material when available.
+/** Editable site copy and lists keyed by supported locale. */
 export const localizedContent = {
   "en-GB": {
     nav: [

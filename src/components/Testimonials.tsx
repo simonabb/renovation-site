@@ -2,6 +2,7 @@ import Reveal from "../lib/Reveal";
 import { localizedContent, type Review } from "../data/content";
 import { formatMessage, useLocale } from "../i18n";
 
+/** Renders a simple customer portrait illustration with an accessible label. */
 function Avatar({ bg, skin, locale, label }: { bg: string; skin: string; locale: string; label: string }) {
   return (
     <svg viewBox="0 0 64 64" role="img" lang={locale} aria-label={label} className="h-14 w-14 flex-none rounded-full">
@@ -12,6 +13,7 @@ function Avatar({ bg, skin, locale, label }: { bg: string; skin: string; locale:
   );
 }
 
+/** Displays one review and its customer attribution. */
 function Card({ r, locale, portraitLabel }: { r: Review; locale: string; portraitLabel: string }) {
   return (
     <figure className="flex h-full flex-col gap-5 rounded-md border border-line bg-card p-7 transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(18,38,58,.14)]">
@@ -27,6 +29,7 @@ function Card({ r, locale, portraitLabel }: { r: Review; locale: string; portrai
   );
 }
 
+/** Shows localized customer reviews and their placeholder-content notice. */
 export default function Testimonials() {
   const { locale, messages } = useLocale();
   const reviews = localizedContent[locale].reviews;
