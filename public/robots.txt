@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://simonabb.github.io/renovation-site/sitemap.xml
+Sitemap: https://cocorenovations.co.uk/sitemap.xml

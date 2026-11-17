@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-/** Vite build settings, including the GitHub Pages project-site base path. */
+/** Vite build settings for the custom-domain site hosted at the domain root. */
 export default defineConfig({
-  base: "/renovation-site/",
+  base: "/",
   plugins: [react()],
   build: {
     target: "esnext",

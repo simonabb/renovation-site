@@ -74,9 +74,8 @@ The quote form can prepare a request in the visitor's email app using `EMAIL`, o
 
 The GitHub Actions workflow in `.github/workflows/deploy.yml` builds the site and deploys the `dist/` output when changes are pushed to `main`. In the repository's **Settings → Pages**, set the publishing source to **GitHub Actions**.
 
-Vite is configured with the project-site base path `/renovation-site/` in `vite.config.ts`, so built assets load from the GitHub Pages project URL.
+The custom domain is `cocorenovations.co.uk`. Configure it in the repository's **Settings → Pages** and point the domain's DNS records to GitHub Pages. The `public/CNAME` file preserves the custom domain across deployments. Vite uses the root path (`/`) so assets and pages resolve correctly on the custom domain.
 
 ## Before publishing
 
-- Set the canonical URL in `index.html` and add the sitemap URL to `public/robots.txt` when the production domain is known.
 - Confirm the business contact and location details in the page content and structured data in `index.html`.
